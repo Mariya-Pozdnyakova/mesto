@@ -1,0 +1,11 @@
+/* Импорт вендорных стилей */
+@import url(../vendor/normalize.css);
+/* Импорт общих стилей для страницы */
+@import url(../vendor/fonts/fonts.css);
+@import url(../blocks/root/root.css);
+@import url(../blocks/page/page.css);
+
+/* Импорт стилей шапки сайта и ее элементов */
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
