@@ -1,0 +1,19 @@
+.profile {
+    width: 100%;
+    max-width: 880px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-left: 16px;
+    padding-right: 16px; */
+  }
+
+  @media screen and (min-width: 1279px) {
+    .profile {
+      display: grid;
+      grid-template-columns: min-content 1fr min-content;
+      justify-items: start;
+      /* justify-content: start; */
+      /* justify-content: space-between; */
+    }
+  } 
