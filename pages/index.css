@@ -20,3 +20,11 @@
 @import url(../blocks/profile-info/__user-name/profile-info__user-name.css);
 @import url(../blocks/profile-info/__edit-button/profile-info__edit-button.css);
 @import url(../blocks/profile-info/__user-status/profile-info__user-status.css);
+
+/* импорт стилей фото карточек */
+@import url(../blocks/photo-cards/photo-cards.css);
+@import url(../blocks/photo-card/photo-card.css);
+@import url(../blocks/photo-card/__image/photo-card__image.css);
+@import url(../blocks/photo-card/__caption/photo-card__caption.css);
+@import url(../blocks/photo-card/__like/photo-card__like.css);
+@import url(../blocks/photo-card/__title/photo-card__title.css);

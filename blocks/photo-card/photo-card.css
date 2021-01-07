@@ -1,0 +1,8 @@
+.photo-card {
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 31px;
+    box-sizing: border-box;
+    width: 282px;
+}
