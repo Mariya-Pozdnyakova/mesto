@@ -28,3 +28,7 @@
 @import url(../blocks/photo-card/__caption/photo-card__caption.css);
 @import url(../blocks/photo-card/__like/photo-card__like.css);
 @import url(../blocks/photo-card/__title/photo-card__title.css);
+
+/* импорт стилей подвала */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);

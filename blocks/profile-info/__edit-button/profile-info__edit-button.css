@@ -13,9 +13,9 @@
 }
 
 @media screen and (min-width: 1279px) {
-   .profile-info__edit-button {
-      width: 24px;
-      height: 24px;
-      justify-content: flex-end;
-    }
-  } 
+  .profile-info__edit-button {
+    width: 24px;
+    height: 24px;
+    justify-content: flex-end;
+  }
+}

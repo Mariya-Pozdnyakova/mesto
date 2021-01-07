@@ -1,15 +1,15 @@
 .photo-cards {
-    padding-top: 36px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    row-gap: 20px;
+  padding-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 20px;
 }
 
 @media screen and (min-width: 1279px) {
   .photo-cards {
-      padding-top: 47.25px;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 17px;
-    }
-}    
+    padding-top: 47.25px;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 17px;
+  }
+}
