@@ -4,12 +4,21 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   row-gap: 20px;
+  max-width: 880px;
+}
+
+@media screen and (min-width: 759px) {
+  .photo-cards {
+    padding-top: 47.25px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 17px;
+  }
 }
 
 @media screen and (min-width: 1279px) {
   .photo-cards {
     padding-top: 47.25px;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 17px;
+    /* column-gap: 17px; */
   }
 }
