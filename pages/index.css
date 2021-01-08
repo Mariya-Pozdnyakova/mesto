@@ -27,6 +27,7 @@
 @import url(../blocks/photo-card/__image/photo-card__image.css);
 @import url(../blocks/photo-card/__caption/photo-card__caption.css);
 @import url(../blocks/photo-card/__like/photo-card__like.css);
+@import url(../blocks/photo-card/__like/_active/photo-card__like_active.css);
 @import url(../blocks/photo-card/__title/photo-card__title.css);
 
 /* импорт стилей подвала */
