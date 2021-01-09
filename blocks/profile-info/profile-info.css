@@ -1,7 +1,7 @@
 .profile-info {
   display: grid;
-  grid-template-columns: max-content min-content;
-  grid-template-rows: auto;
+  grid-template-columns: minmax(0,189px) min-content;
+  grid-template-rows: 2;
   margin-bottom: 36px;
   column-gap: 10px;
   row-gap: 14px;
@@ -10,7 +10,7 @@
 
 @media screen and (min-width: 1279px) {
   .profile-info {
-    display: grid;
+    grid-template-columns: minmax(0,294px) min-content;
     margin-bottom: 0;
     column-gap: 18px;
     row-gap: 16px;
