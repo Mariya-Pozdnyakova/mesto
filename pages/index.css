@@ -21,6 +21,21 @@
 @import url(../blocks/profile-info/__edit-button/profile-info__edit-button.css);
 @import url(../blocks/profile-info/__user-status/profile-info__user-status.css);
 
+/* импорт стилей формы профиля */
+@import url(../blocks/profile-overlay/profile-overlay.css);
+@import url(../blocks/profile-overlay/_closed/profile-overlay_closed.css);
+@import url(../blocks/profile-popup/profile-popup.css);
+@import url(../blocks/profile-popup/__close-button/profile-popup__close-button.css);
+/* содержание формы */
+@import url(../blocks/profile-popup/__form/profile-popup__form.css);
+@import url(../blocks/profile-popup/__heading/profile-popup__heading.css);
+@import url(../blocks/profile-popup/__input-container/profile-popup__input-container.css);
+@import url(../blocks/profile-popup/__item/profile-popup__item.css);
+@import url(../blocks/profile-popup/__item/_el/profile-popup__item_el_heading.css);
+@import url(../blocks/profile-popup/__item/_el/profile-popup__item_el_subheading.css);
+@import url(../blocks/profile-popup/__save-button/profile-popup__save-button.css);
+
+
 /* импорт стилей фото карточек */
 @import url(../blocks/photo-cards/photo-cards.css);
 @import url(../blocks/photo-card/photo-card.css);

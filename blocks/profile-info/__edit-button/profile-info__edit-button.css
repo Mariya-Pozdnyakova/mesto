@@ -5,6 +5,8 @@
   width: 18px;
   height: 18px;
   border: 1px solid #FFFFFF;
+  background-color: rgba(0,0,0,.0);
+  outline: none;
 }
 
 .profile-info__edit-button:hover {

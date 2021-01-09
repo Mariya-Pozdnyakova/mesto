@@ -1,0 +1,23 @@
+.profile-popup__item {
+  min-height: 27px;
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  padding: 0;
+  outline-color:rgba(14, 57, 248, 0.555);
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(0,0,0,1)
+}
+
+.profile-popup__item:focus {
+  background-color: rgba(0,0,0,0);
+}
+
+.profile-popup__item::placeholder {
+  color: rgba(0,0,0,1)
+}
+

@@ -1,0 +1,14 @@
+.profile-popup__input-container {
+  margin: 0;
+  margin-bottom: 45px;
+  border: none;
+  padding: 0;
+  width: 100%;
+  max-width: 358px;
+}
+
+@media screen and (min-width: 1279px) {
+  .profile-popup__input-container {
+    margin-bottom: 48px;
+  }
+}
