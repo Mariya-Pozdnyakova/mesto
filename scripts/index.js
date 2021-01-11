@@ -7,7 +7,7 @@ let popupEditButton = document.querySelector('.profile-info__edit-button');
 // profileOverlay.classList.toggle('profile-overlay_closed');
 
 function popupToggle() {
-  profileOverlay.classList.toggle('overlay_closed');
+  profileOverlay.classList.toggle('overlay_opened');
 }
 
 // Обработчик «отправки» формы, хотя пока

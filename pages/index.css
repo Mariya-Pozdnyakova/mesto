@@ -23,7 +23,7 @@
 
 /* импорт стилей формы профиля */
 @import url(../blocks/overlay/overlay.css);
-@import url(../blocks/overlay/_closed/overlay_closed.css);
+@import url(../blocks/overlay/_opened/overlay_opened.css);
 @import url(../blocks/overlay/__popup-area/overlay__popup-area.css);
 @import url(../blocks/overlay/__close-button/overlay__close-button.css);
 /* содержание формы */

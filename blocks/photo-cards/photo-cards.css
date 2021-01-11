@@ -17,8 +17,6 @@
 
 @media screen and (min-width: 1279px) {
   .photo-cards {
-    padding-top: 47.25px;
     grid-template-columns: 1fr 1fr 1fr;
-    /* column-gap: 17px; */
   }
 }
