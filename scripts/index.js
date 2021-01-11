@@ -1,7 +1,7 @@
 // Находим форму в DOM
-let formElement = document.querySelector('.profile-popup__form');
+let formElement = document.querySelector('.overlay__form');
 let profileOverlay = document.querySelector('.overlay');
-let popupCloseButton = document.querySelector('.profile-popup__close-button');
+let popupCloseButton = document.querySelector('.overlay__close-button');
 let popupEditButton = document.querySelector('.profile-info__edit-button');
 
 // profileOverlay.classList.toggle('profile-overlay_closed');
@@ -18,8 +18,8 @@ function handleFormSubmit (evt) {
                         // О том, как это делать, расскажем позже.
 
     // Находим поля формы в DOM
-    let nameInput = formElement.querySelector('.profile-popup__item_el_heading');
-    let jobInput = formElement.querySelector('.profile-popup__item_el_subheading');
+    let nameInput = formElement.querySelector('.overlay__item_el_heading');
+    let jobInput = formElement.querySelector('.overlay__item_el_subheading');
 
     // Получите значение полей из свойства value
     let nameInputValue = nameInput.value;

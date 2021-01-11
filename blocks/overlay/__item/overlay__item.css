@@ -1,4 +1,4 @@
-.profile-popup__item {
+.overlay__item {
   min-height: 27px;
   width: 100%;
   margin: 0;
@@ -13,11 +13,11 @@
   color: rgba(0,0,0,1);
 }
 
-.profile-popup__item:focus {
+.overlay__item:focus {
   background-color: rgba(0,0,0,0);
 }
 
-.profile-popup__item::placeholder {
+.overlay__item::placeholder {
   color: rgba(0,0,0,1);
 }
 

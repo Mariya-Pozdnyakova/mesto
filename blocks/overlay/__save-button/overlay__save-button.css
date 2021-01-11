@@ -1,4 +1,4 @@
-.profile-popup__save-button {
+.overlay__save-button {
   width: 100%;
   max-width: 358px;
   height: 46px;
@@ -13,13 +13,13 @@
   color: #FFFFFF;
 }
 
-.profile-popup__save-button:hover {
+.overlay__save-button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
 @media screen and (min-width: 1279px) {
-  .profile-popup__save-button {
+  .overlay__save-button {
     height: 50px;
     font-size: 18px;
     line-height: 22px;

@@ -1,4 +1,4 @@
-.profile-popup__form {
+.overlay__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: 1279px) {
-  .profile-popup__form {
+  .overlay__form {
     padding: 34px 36px 37px;
   }
 }

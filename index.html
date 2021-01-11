@@ -66,29 +66,29 @@
         </article>
       </section>
       <section class="overlay overlay_closed">
-        <div class="profile-popup">
-          <button class="profile-popup__close-button" type="button"></button>
-          <form class="profile-popup__form">
-            <h2 class="profile-popup__heading">Редактировать профиль</h2>
-            <fieldset class="profile-popup__input-container">
+        <div class="overlay__popup-area">
+          <button class="overlay__close-button" type="button"></button>
+          <form class="overlay__form">
+            <h2 class="overlay__heading">Редактировать профиль</h2>
+            <fieldset class="overlay__input-container">
               <input
                 type="text"
                 id="heading"
                 name="heading"
                 placeholder="Имя пользователя"
                 required
-                class="profile-popup__item profile-popup__item_el_heading">
+                class="overlay__item overlay__item_el_heading">
               <input
                 type="text"
                 id="subheading"
                 name="subheading"
                 placeholder="Статус пользователя"
                 required
-                class="profile-popup__item profile-popup__item_el_subheading">
+                class="overlay__item overlay__item_el_subheading">
             </fieldset>
             <button
               type="submit"
-              class="profile-popup__save-button">Сохранить</button>
+              class="overlay__save-button">Сохранить</button>
           </form>
         </div>
       </section>
