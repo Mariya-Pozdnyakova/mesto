@@ -21,33 +21,6 @@
         </div>
         <button class="profile__add-button" type="button"></button>
       </section>
-      <section class="overlay overlay_closed">
-        <div class="profile-popup">
-          <button class="profile-popup__close-button" type="button"></button>
-          <form class="profile-popup__form">
-            <h2 class="profile-popup__heading">Редактировать профиль</h2>
-            <fieldset class="profile-popup__input-container">
-              <input
-                type="text"
-                id="heading"
-                name="heading"
-                placeholder="Жак-Ив Кусто"
-                required
-                class="profile-popup__item profile-popup__item_el_heading">
-              <input
-                type="text"
-                id="subheading"
-                name="subheading"
-                placeholder="Исследователь океана"
-                required
-                class="profile-popup__item profile-popup__item_el_subheading">
-            </fieldset>
-            <button
-              type="submit"
-              class="profile-popup__save-button">Сохранить</button>
-          </form>
-        </div>
-      </section>
       <section class="photo-cards">
         <article class="photo-card">
           <img src="images/karachaev.jpg" alt="Заброшенная церковь" class="photo-card__image">
@@ -91,6 +64,33 @@
             <button class="photo-card__like" type="button"></button>
           </div>
         </article>
+      </section>
+      <section class="overlay overlay_closed">
+        <div class="profile-popup">
+          <button class="profile-popup__close-button" type="button"></button>
+          <form class="profile-popup__form">
+            <h2 class="profile-popup__heading">Редактировать профиль</h2>
+            <fieldset class="profile-popup__input-container">
+              <input
+                type="text"
+                id="heading"
+                name="heading"
+                placeholder="Жак-Ив Кусто"
+                required
+                class="profile-popup__item profile-popup__item_el_heading">
+              <input
+                type="text"
+                id="subheading"
+                name="subheading"
+                placeholder="Исследователь океана"
+                required
+                class="profile-popup__item profile-popup__item_el_subheading">
+            </fieldset>
+            <button
+              type="submit"
+              class="profile-popup__save-button">Сохранить</button>
+          </form>
+        </div>
       </section>
     </main>
     <footer class="footer">
