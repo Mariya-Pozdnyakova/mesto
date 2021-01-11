@@ -1,13 +1,13 @@
 // Находим форму в DOM
 let formElement = document.querySelector('.profile-popup__form');
-let profileOverlay = document.querySelector('.profile-overlay');
+let profileOverlay = document.querySelector('.overlay');
 let popupCloseButton = document.querySelector('.profile-popup__close-button');
 let popupEditButton = document.querySelector('.profile-info__edit-button');
 
 // profileOverlay.classList.toggle('profile-overlay_closed');
 
 function popupToggle() {
-  profileOverlay.classList.toggle('profile-overlay_closed');
+  profileOverlay.classList.toggle('overlay_closed');
 }
 
 // Обработчик «отправки» формы, хотя пока

@@ -1,4 +1,4 @@
-.profile-overlay {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (min-width: 1279px) {
-  .profile-overlay {
+  .overlay {
     padding-top: 195px;
   }
 }

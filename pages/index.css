@@ -22,8 +22,8 @@
 @import url(../blocks/profile-info/__user-status/profile-info__user-status.css);
 
 /* импорт стилей формы профиля */
-@import url(../blocks/profile-overlay/profile-overlay.css);
-@import url(../blocks/profile-overlay/_closed/profile-overlay_closed.css);
+@import url(../blocks/overlay/overlay.css);
+@import url(../blocks/overlay/_closed/overlay_closed.css);
 @import url(../blocks/profile-popup/profile-popup.css);
 @import url(../blocks/profile-popup/__close-button/profile-popup__close-button.css);
 /* содержание формы */
