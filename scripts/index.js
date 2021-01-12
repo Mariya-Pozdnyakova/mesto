@@ -17,11 +17,7 @@ function popupToggle() {
 function popupOpen() {
   nameInput.value = nameText.textContent;
   jobInput.value = jobText.textContent;
-  popupToggle()
-}
-
-function popupClose() {
-  popupToggle()
+  popupToggle();
 }
 
 // Обработчик «отправки» формы, хотя пока
@@ -37,11 +33,11 @@ function handleFormSubmit (evt) {
     // Вставьте новые значения с помощью textContent
     jobText.textContent = jobInputValue;
     nameText.textContent = nameInputValue;
-    popupClose();
+    popupToggle();
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit);
 popupEditButton.addEventListener('click', popupOpen);
-popupCloseButton.addEventListener('click', popupClose);
+popupCloseButton.addEventListener('click', popupToggle);
