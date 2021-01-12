@@ -19,14 +19,14 @@
           <button class="profile-info__edit-button" type="button"></button>
           <p class="profile-info__user-status">Исследователь океана</p>
         </div>
-        <button class="profile__add-button" type="button"></button>
+        <button class="profile__add-button" type="button" aria-label="Редактировать"></button>
       </section>
       <section class="photo-cards">
         <article class="photo-card">
           <img src="./images/karachaev.jpg" alt="Заброшенная церковь" class="photo-card__image">
           <div class="photo-card__caption">
             <h2 class="photo-card__title">Карачаево-Черкесия</h2>
-            <button class="photo-card__like photo-card__like_active" type="button"></button>
+            <button class="photo-card__like" type="button"></button>
           </div>
         </article>
         <article class="photo-card">
@@ -47,7 +47,7 @@
           <img src="./images/karachaev.jpg" alt="Заброшенная церковь" class="photo-card__image">
           <div class="photo-card__caption">
             <h2 class="photo-card__title">Карачаево-Черкесия</h2>
-            <button class="photo-card__like photo-card__like_active" type="button"></button>
+            <button class="photo-card__like" type="button"></button>
           </div>
         </article>
         <article class="photo-card">
@@ -67,8 +67,8 @@
       </section>
       <section class="overlay">
         <div class="overlay__popup-area">
-          <button class="overlay__close-button" type="button"></button>
-          <form class="overlay__form" name="profile-form">
+          <button class="overlay__close-button" type="button" aria-label="Закрыть"></button>
+          <form class="overlay__form" name="profileForm">
             <h2 class="overlay__heading">Редактировать профиль</h2>
             <fieldset class="overlay__input-container">
               <input
