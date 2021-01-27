@@ -22,7 +22,7 @@
         <button class="profile__add-button" type="button" aria-label="Редактировать"></button>
       </section>
       <section class="photo-cards">
-        <article class="photo-card">
+        <!-- <article class="photo-card">
           <img src="./images/karachaev.jpg" alt="Заброшенная церковь" class="photo-card__image">
           <div class="photo-card__caption">
             <h2 class="photo-card__title">Карачаево-Черкесия</h2>
@@ -63,7 +63,7 @@
             <h2 class="photo-card__title">Домбай</h2>
             <button class="photo-card__like" type="button"></button>
           </div>
-        </article>
+        </article> -->
       </section>
       <section class="overlay">
         <div class="overlay__popup-area">
@@ -97,6 +97,15 @@
       <p class="footer__copyright">&copy;2020 Mesto Russia</p>
     </footer>
   </div>
+  <template id="card-template">
+    <article class="photo-card">
+      <img class="photo-card__image">
+      <div class="photo-card__caption">
+        <h2 class="photo-card__title"></h2>
+        <button class="photo-card__like" type="button"></button>
+      </div>
+    </article>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
