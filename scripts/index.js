@@ -53,15 +53,6 @@ const initialCards = [
   }
 ];
 
-//подгрузка 6 карточек при запуске
-initialCards.forEach((item) => {
-  const cardElement = cardTemplate.querySelector('.photo-card').cloneNode(true);
-  cardElement.querySelector('.photo-card__image').src = item.link;
-  cardElement.querySelector('.photo-card__image').alt = item.name;
-  cardElement.querySelector('.photo-card__title').textContent = item.name;
-  cardsContainer.append(cardElement);
-});
-
 //вспомогательные функции
 const popupToggle = () => {
   profileOverlay.classList.toggle('overlay_opened');
@@ -70,6 +61,11 @@ const popupToggle = () => {
 const formToggle = (form) => {
   form.classList.toggle('overlay__form_active');
 }
+
+const likeToggle = (evt) => {
+  evt.target.classList.toggle('photo-card__like_active');
+}
+
 //открытие форм
 const profileOpen = () => {
   popupToggle();
@@ -83,8 +79,8 @@ const newCardOpen = () => {
   formToggle(сardsForm);
   newCardName.value = '';
   newCardLink.value = '';
-
 }
+
 //Закрытие popup
 const popupClose = () => {
   popupToggle();
@@ -115,11 +111,22 @@ const handleFormSubmit = (evt) => {
     cardElement.querySelector('.photo-card__image').src = newCardLink.value;
     cardElement.querySelector('.photo-card__image').alt = newCardName.value;
     cardElement.querySelector('.photo-card__title').textContent = newCardName.value;
+    cardElement.querySelector('.photo-card__like').addEventListener('click', likeToggle);
     cardsContainer.prepend(cardElement);
     formToggle(cardsForm);
   }
   popupToggle();
 }
+
+//подгрузка 6 карточек при запуске
+initialCards.forEach((item) => {
+  const cardElement = cardTemplate.querySelector('.photo-card').cloneNode(true);
+  cardElement.querySelector('.photo-card__image').src = item.link;
+  cardElement.querySelector('.photo-card__image').alt = item.name;
+  cardElement.querySelector('.photo-card__title').textContent = item.name;
+  cardElement.querySelector('.photo-card__like').addEventListener('click', likeToggle);
+  cardsContainer.append(cardElement);
+});
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
