@@ -28,10 +28,9 @@
 @import url(../blocks/overlay/__close-button/overlay__close-button.css);
 /* содержание формы */
 @import url(../blocks/overlay/__form/overlay__form.css);
+@import url(../blocks/overlay/__form/_active/overlay__form_active.css);
 @import url(../blocks/overlay/__heading/overlay__heading.css);
 @import url(../blocks/overlay/__input-container/overlay__input-container.css);
-@import url(../blocks/overlay/__input-container/_cards/overlay__input-container_cards.css);
-@import url(../blocks/overlay/__input-container/_profile/overlay__input-container_profile.css);
 @import url(../blocks/overlay/__item/overlay__item.css);
 @import url(../blocks/overlay/__item/_el/overlay__item_el_heading.css);
 @import url(../blocks/overlay/__item/_el/overlay__item_el_subheading.css);

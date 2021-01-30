@@ -68,9 +68,9 @@
       <section class="overlay">
         <div class="overlay__popup-area">
           <button class="overlay__close-button" type="button" aria-label="Закрыть"></button>
-          <form class="overlay__form" name="profileForm">
-            <h2 class="overlay__heading"></h2>
-            <fieldset class="overlay__input-container overlay__input-container_profile">
+          <form class="overlay__form" name="profileForm" id="profileForm">
+            <h2 class="overlay__heading">Редактировать профиль</h2>
+            <fieldset class="overlay__input-container">
               <input
                 type="text"
                 id="heading"
@@ -86,25 +86,31 @@
                 required
                 class="overlay__item overlay__item_el_subheading">
             </fieldset>
-            <fieldset class="overlay__input-container overlay__input-container_cards">
+            <button
+              type="submit"
+              class="overlay__save-button">Сохранить</button>
+          </form>
+          <form class="overlay__form" name="cardsForm" id="cardsForm">
+            <h2 class="overlay__heading">Новое место</h2>
+            <fieldset class="overlay__input-container">
               <input
                 type="text"
-                id="heading"
-                name="heading"
+                id="cardName"
+                name="cardName"
                 placeholder="Название"
                 required
-                class="overlay__item overlay__item_el_heading">
+                class="overlay__item overlay__item_el_name">
               <input
-                type="text"
-                id="subheading"
-                name="subheading"
+                type="url"
+                id="cardLink"
+                name="cardLink"
                 placeholder="Ссылка на картинку"
                 required
-                class="overlay__item overlay__item_el_subheading">
+                class="overlay__item overlay__item_el_link">
             </fieldset>
             <button
               type="submit"
-              class="overlay__save-button"></button>
+              class="overlay__save-button">Создать</button>
           </form>
         </div>
       </section>
