@@ -66,6 +66,10 @@ const likeToggle = (evt) => {
   evt.target.classList.toggle('photo-card__like_active');
 }
 
+const trashToggle = (evt) => {
+  evt.target.parentElement.remove();
+}
+
 //открытие форм
 const profileOpen = () => {
   popupToggle();
@@ -112,6 +116,7 @@ const handleFormSubmit = (evt) => {
     cardElement.querySelector('.photo-card__image').alt = newCardName.value;
     cardElement.querySelector('.photo-card__title').textContent = newCardName.value;
     cardElement.querySelector('.photo-card__like').addEventListener('click', likeToggle);
+    cardElement.querySelector('.photo-card__trash').addEventListener('click', trashToggle);
     cardsContainer.prepend(cardElement);
     formToggle(cardsForm);
   }
@@ -125,6 +130,7 @@ initialCards.forEach((item) => {
   cardElement.querySelector('.photo-card__image').alt = item.name;
   cardElement.querySelector('.photo-card__title').textContent = item.name;
   cardElement.querySelector('.photo-card__like').addEventListener('click', likeToggle);
+  cardElement.querySelector('.photo-card__trash').addEventListener('click', trashToggle);
   cardsContainer.append(cardElement);
 });
 
