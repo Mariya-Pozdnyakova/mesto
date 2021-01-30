@@ -81,6 +81,9 @@ const profileOpen = () => {
 const newCardOpen = () => {
   popupToggle();
   formToggle(сardsForm);
+  newCardName.value = '';
+  newCardLink.value = '';
+
 }
 //Закрытие popup
 const popupClose = () => {
