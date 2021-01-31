@@ -1,0 +1,9 @@
+.overlay__popup-area_photo {
+  max-width: 75vw;
+  max-height: 75vh;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 0;
+  /* background-color: rgba(0,0,0,0); */
+  /* box-sizing: content-box; */
+}

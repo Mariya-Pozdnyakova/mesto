@@ -25,7 +25,9 @@
 @import url(../blocks/overlay/overlay.css);
 @import url(../blocks/overlay/_opened/overlay_opened.css);
 @import url(../blocks/overlay/__popup-area/overlay__popup-area.css);
+@import url(../blocks/overlay/__popup-area/_photo/overlay__popup-area_photo.css);
 @import url(../blocks/overlay/__close-button/overlay__close-button.css);
+
 /* содержание формы */
 @import url(../blocks/overlay/__form/overlay__form.css);
 @import url(../blocks/overlay/__form/_active/overlay__form_active.css);
@@ -36,6 +38,11 @@
 @import url(../blocks/overlay/__item/_el/overlay__item_el_subheading.css);
 @import url(../blocks/overlay/__save-button/overlay__save-button.css);
 
+/* всплывающая фотокарточка */
+@import url(../blocks/overlay/__photo-card/overlay__photo-card.css);
+@import url(../blocks/overlay/__photo-card/_active/overlay__photo-card_active.css);
+@import url(../blocks/overlay/__photo-caption/overlay__photo-caption.css);
+@import url(../blocks/overlay/__photo-caption/_active/overlay__photo-caption_active.css);
 
 /* импорт стилей фото карточек */
 @import url(../blocks/photo-cards/photo-cards.css);

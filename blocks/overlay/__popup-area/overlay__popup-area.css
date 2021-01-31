@@ -6,4 +6,7 @@
   border-radius: 10px;
   box-sizing: border-box;
   position: relative;
-}
+  justify-content: center;
+  align-items: center;
+} 
+

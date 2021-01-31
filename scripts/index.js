@@ -1,6 +1,9 @@
 // Находим Overlay в DOM
 const profileOverlay = document.querySelector('.overlay');
 const formArea = document.querySelector('.overlay__popup-area');
+// Находим открытую карточку в DOM
+const popupPhoto = formArea.querySelector('.overlay__photo-card');
+const photoCaption = formArea.querySelector('.overlay__photo-caption');
 // Находим формы в DOM
 const profileForm = formArea.querySelector('#profileForm');
 const сardsForm = formArea.querySelector('#cardsForm');
@@ -70,6 +73,19 @@ const trashToggle = (evt) => {
   evt.target.parentElement.remove();
 }
 
+const photoCardToggle = () => {
+  popupPhoto.classList.toggle('overlay__photo-card_active');
+  formArea.classList.toggle('overlay__popup-area_photo');
+  photoCaption.classList.toggle('overlay__photo-caption_active');
+}
+// открытие фотокарточки
+const cardOpen = (evt) => {
+  popupPhoto.src = evt.target.src;
+  photoCaption.textContent = evt.target.alt;
+  popupToggle();
+  photoCardToggle();
+}
+
 //открытие форм
 const profileOpen = () => {
   popupToggle();
@@ -93,6 +109,9 @@ const popupClose = () => {
       formToggle(item);
     }
   });
+  if (popupPhoto.classList.contains('overlay__photo-card_active')) {
+    photoCardToggle();
+  }
 }
 
 // Обработчик «отправки» формы, хотя пока
@@ -117,6 +136,7 @@ const handleFormSubmit = (evt) => {
     cardElement.querySelector('.photo-card__title').textContent = newCardName.value;
     cardElement.querySelector('.photo-card__like').addEventListener('click', likeToggle);
     cardElement.querySelector('.photo-card__trash').addEventListener('click', trashToggle);
+    cardElement.querySelector('.photo-card__image').addEventListener('click', cardOpen);
     cardsContainer.prepend(cardElement);
     formToggle(cardsForm);
   }
@@ -131,12 +151,13 @@ initialCards.forEach((item) => {
   cardElement.querySelector('.photo-card__title').textContent = item.name;
   cardElement.querySelector('.photo-card__like').addEventListener('click', likeToggle);
   cardElement.querySelector('.photo-card__trash').addEventListener('click', trashToggle);
+  cardElement.querySelector('.photo-card__image').addEventListener('click', cardOpen);
   cardsContainer.append(cardElement);
 });
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-  popupEditButton.addEventListener('click', profileOpen);
-  popupAddButton.addEventListener('click', newCardOpen);
-  popupCloseButton.addEventListener('click', popupClose);
-  popupForms.forEach((item) => {item.addEventListener('submit', handleFormSubmit)});
+popupEditButton.addEventListener('click', profileOpen);
+popupAddButton.addEventListener('click', newCardOpen);
+popupCloseButton.addEventListener('click', popupClose);
+popupForms.forEach((item) => {item.addEventListener('submit', handleFormSubmit)});

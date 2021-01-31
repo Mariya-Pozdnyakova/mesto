@@ -1,0 +1,6 @@
+.overlay__photo-card {
+  object-fit: cover;
+  display: none;
+  max-width: 75vw;
+  max-height: 75vh;
+}
