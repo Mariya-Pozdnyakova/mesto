@@ -56,13 +56,31 @@ const initialCards = [
   }
 ];
 
+const toggleVisibility =(element) => {
+  setTimeout(() => {
+    element.classList.toggle('visible');
+    element.classList.toggle('hidden');
+  }, 0);
+}
+
 //вспомогательные функции
 const popupToggle = () => {
-  profileOverlay.classList.toggle('overlay_opened');
+  toggleVisibility(profileOverlay);
+  if (profileOverlay.classList.contains('overlay_opened')) {
+    setTimeout(() => {
+    profileOverlay.classList.toggle('overlay_opened');
+    }, 150);
+  }
+  else profileOverlay.classList.toggle('overlay_opened');
 }
 
 const formToggle = (form) => {
-  form.classList.toggle('overlay__form_active');
+  if (profileOverlay.classList.contains('overlay_opened')) {
+    setTimeout(() => {
+    form.classList.toggle('overlay__form_active');
+    },150);
+  }
+  else form.classList.toggle('overlay__form_active');
 }
 
 const likeToggle = (evt) => {
