@@ -56,31 +56,25 @@ const initialCards = [
   }
 ];
 
-const toggleVisibility =(element) => {
-  setTimeout(() => {
-    element.classList.toggle('visible');
-    element.classList.toggle('hidden');
-  }, 0);
+//вспомогательные функции
+const removePopupContent =() => {
+  popupForms.forEach((element) => {
+    element.className = 'overlay__form';
+  });
+  popupPhoto.className = 'overlay__photo-card';
+  popupPhotoCaption.className = 'overlay__photo-caption';
+  popupElementArea.className = 'overlay__popup-area';
 }
 
-//вспомогательные функции
-const togglePopupActivity = () => {
-  toggleVisibility(popupOverlay);
-  if (popupOverlay.classList.contains('overlay_opened')) {
-    setTimeout(() => {
-    popupOverlay.classList.toggle('overlay_opened');
-    }, 150);
+const togglePopupActivity = (content = '') => {
+  popupOverlay.classList.toggle('overlay_opened');
+  if (content === 'remove') {
+    removePopupContent();
   }
-  else popupOverlay.classList.toggle('overlay_opened');
 }
 
 const toggleFormActivity = (form) => {
-  if (popupOverlay.classList.contains('overlay_opened')) {
-    setTimeout(() => {
-    form.classList.toggle('overlay__form_active');
-    },150);
-  }
-  else form.classList.toggle('overlay__form_active');
+  form.classList.toggle('overlay__form_active');
 }
 
 const toggleCardsLike = (evt) => {
@@ -100,7 +94,6 @@ const togglePhotoActivity = () => {
 // клонирование фотокарточки
 const createCardElement = () => cardTemplate.querySelector('.photo-card').cloneNode(true);
 
-
 // Добавление слушателей на фотокарточки
 const addCardsListeners = () => {
   cardElement.querySelector('.photo-card__like').addEventListener('click', toggleCardsLike);
@@ -112,20 +105,20 @@ const addCardsListeners = () => {
 const openPhotoPopup = (evt) => {
   popupPhoto.src = evt.target.src;
   popupPhotoCaption.textContent = evt.target.alt;
-  togglePopupActivity();
+  togglePopupActivity('remove');
   togglePhotoActivity();
 }
 
 //открытие форм
 const openProfilePopup = () => {
-  togglePopupActivity();
+  togglePopupActivity('remove');
   toggleFormActivity(profileForm);
   nameInput.value = nameText.textContent;
   jobInput.value = jobText.textContent;
 }
 
 const openCardsFormPopup = () => {
-  togglePopupActivity();
+  togglePopupActivity('remove');
   toggleFormActivity(сardsForm);
   newCardName.value = '';
   newCardLink.value = '';
@@ -134,14 +127,6 @@ const openCardsFormPopup = () => {
 //Закрытие popup
 const closePopup = () => {
   togglePopupActivity();
-  popupForms.forEach((item) => {
-    if (item.classList.contains('overlay__form_active')) {
-      toggleFormActivity(item);
-    }
-  });
-  if (popupPhoto.classList.contains('overlay__photo-card_active')) {
-    togglePhotoActivity();
-  }
 }
 
 // Обработчик «отправки» формы, хотя пока
