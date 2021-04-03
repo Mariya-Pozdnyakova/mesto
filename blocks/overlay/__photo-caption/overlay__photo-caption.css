@@ -1,5 +1,5 @@
 .overlay__photo-caption {
-  display: none;
+  display: inline;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;

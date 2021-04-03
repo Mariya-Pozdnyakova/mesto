@@ -1,15 +1,18 @@
 // Находим Overlay в DOM
-const popupOverlay = document.querySelector('.overlay');
-const popupElementArea = document.querySelector('.overlay__popup-area');
+const overlayProfile = document.querySelector('.overlay-profile');
+const overlayCard = document.querySelector('.overlay-card');
+const overlayPhoto = document.querySelector('.overlay-photo');
 // Находим открытую карточку в DOM
-const popupPhoto = popupElementArea.querySelector('.overlay__photo-card');
-const popupPhotoCaption = popupElementArea.querySelector('.overlay__photo-caption');
+const popupPhoto = overlayPhoto.querySelector('.overlay__photo-card');
+const popupPhotoCaption = overlayPhoto.querySelector('.overlay__photo-caption');
 // Находим формы в DOM
-const profileForm = popupElementArea.querySelector('#profileForm');
-const сardsForm = popupElementArea.querySelector('#cardsForm');
-const popupForms = Array.from(popupElementArea.querySelectorAll('.overlay__form'));
+const profileForm = overlayProfile.querySelector('#profileForm');
+const сardsForm = overlayCard.querySelector('#cardsForm');
 // Находим кнопки в DOM
-const popupCloseButton = document.querySelector('.overlay__close-button');
+const profileCloseButton = overlayProfile.querySelector('.overlay__close-button');
+const cardCloseButton = overlayCard.querySelector('.overlay__close-button');
+const photoCloseButton = overlayPhoto.querySelector('.overlay__close-button');
+
 const popupEditButton = document.querySelector('.profile-info__edit-button');
 const popupAddButton = document.querySelector('.profile__add-button');
 const popupSaveButton = document.querySelector('.overlay__save-button');
@@ -57,24 +60,13 @@ const initialCards = [
 ];
 
 //вспомогательные функции
-const removePopupContent =() => {
-  popupForms.forEach((element) => {
-    element.className = 'overlay__form';
-  });
-  popupPhoto.className = 'overlay__photo-card';
-  popupPhotoCaption.className = 'overlay__photo-caption';
-  popupElementArea.className = 'overlay__popup-area';
+
+const togglePopupActivity = (overlay) => {
+  overlay.classList.toggle('overlay_opened');
 }
 
-const togglePopupActivity = (content = '') => {
-  popupOverlay.classList.toggle('overlay_opened');
-  if (content === 'remove') {
-    removePopupContent();
-  }
-}
-
-const toggleFormActivity = (form) => {
-  form.classList.toggle('overlay__form_active');
+const closePopup = (close) => {
+  close.target.parentElement.parentElement.classList.toggle('overlay_opened');
 }
 
 const toggleCardsLike = (evt) => {
@@ -83,12 +75,6 @@ const toggleCardsLike = (evt) => {
 
 const removePhotoCards = (evt) => {
   evt.target.parentElement.remove();
-}
-
-const togglePhotoActivity = () => {
-  popupPhoto.classList.toggle('overlay__photo-card_active');
-  popupElementArea.classList.toggle('overlay__popup-area_photo');
-  popupPhotoCaption.classList.toggle('overlay__photo-caption_active');
 }
 
 // клонирование фотокарточки
@@ -105,28 +91,20 @@ const addCardsListeners = () => {
 const openPhotoPopup = (evt) => {
   popupPhoto.src = evt.target.src;
   popupPhotoCaption.textContent = evt.target.alt;
-  togglePopupActivity('remove');
-  togglePhotoActivity();
+  togglePopupActivity(overlayPhoto);
 }
 
 //открытие форм
 const openProfilePopup = () => {
-  togglePopupActivity('remove');
-  toggleFormActivity(profileForm);
+  togglePopupActivity(overlayProfile);
   nameInput.value = nameText.textContent;
   jobInput.value = jobText.textContent;
 }
 
 const openCardsFormPopup = () => {
-  togglePopupActivity('remove');
-  toggleFormActivity(сardsForm);
+  togglePopupActivity(overlayCard);
   newCardName.value = '';
   newCardLink.value = '';
-}
-
-//Закрытие popup
-const closePopup = () => {
-  togglePopupActivity();
 }
 
 // Обработчик «отправки» формы, хотя пока
@@ -141,8 +119,7 @@ const handleProfileFormSubmit = (evt) => {
   // Вставьте новые значения с помощью textContent
   jobText.textContent = jobInputValue;
   nameText.textContent = nameInputValue;
-  toggleFormActivity(profileForm);
-  togglePopupActivity();
+  togglePopupActivity(overlayProfile);
 }
 
 const handleCardsFormSubmit = (evt) => {
@@ -153,8 +130,7 @@ const handleCardsFormSubmit = (evt) => {
   cardElement.querySelector('.photo-card__title').textContent = newCardName.value;
   addCardsListeners();
   cardsContainer.prepend(cardElement);
-  toggleFormActivity(cardsForm);
-  togglePopupActivity();
+  togglePopupActivity(overlayCard);
 }
 
 //подгрузка 6 карточек при запуске
@@ -171,6 +147,8 @@ initialCards.forEach((item) => {
 // он будет следить за событием “submit” - «отправка»
 popupEditButton.addEventListener('click', openProfilePopup);
 popupAddButton.addEventListener('click', openCardsFormPopup);
-popupCloseButton.addEventListener('click', closePopup);
+profileCloseButton.addEventListener('click', closePopup);
+cardCloseButton.addEventListener('click', closePopup);
+photoCloseButton.addEventListener('click', closePopup);
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 сardsForm.addEventListener('submit', handleCardsFormSubmit);

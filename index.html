@@ -23,11 +23,9 @@
       </section>
       <section class="photo-cards">
       </section>
-      <section class="overlay">
+      <section class="overlay overlay-profile">
         <div class="overlay__popup-area">
           <button class="overlay__close-button" type="button" aria-label="Закрыть"></button>
-          <img src="./images/karachaev.jpg" alt = "Карачаево-Черкесия" class="overlay__photo-card d">
-          <p class="overlay__photo-caption">test</p>
           <form class="overlay__form" name="profileForm" id="profileForm">
             <h2 class="overlay__heading">Редактировать профиль</h2>
             <fieldset class="overlay__input-container">
@@ -50,6 +48,18 @@
               type="submit"
               class="overlay__save-button">Сохранить</button>
           </form>
+        </div>
+      </section>
+      <section class="overlay overlay-photo">
+        <div class="overlay__popup-area overlay__popup-area_photo">
+          <button class="overlay__close-button" type="button" aria-label="Закрыть"></button>
+          <img src="./images/karachaev.jpg" alt = "Карачаево-Черкесия" class="overlay__photo-card d">
+          <p class="overlay__photo-caption">test</p>
+        </div>
+      </section>
+      <section class="overlay overlay-card">
+        <div class="overlay__popup-area">
+          <button class="overlay__close-button" type="button" aria-label="Закрыть"></button>
           <form class="overlay__form" name="cardsForm" id="cardsForm">
             <h2 class="overlay__heading">Новое место</h2>
             <fieldset class="overlay__input-container">
