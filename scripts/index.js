@@ -122,24 +122,25 @@ const handleProfileFormSubmit = (evt) => {
   togglePopupActivity(overlayProfile);
 }
 
+// создание карточки
+const createCard = (src, alt, text) => {
+  cardElement = createCardElement();
+  cardElement.querySelector('.photo-card__image').src = src;
+  cardElement.querySelector('.photo-card__image').alt = alt;
+  cardElement.querySelector('.photo-card__title').textContent = text;
+  addCardsListeners();
+}
+
 const handleCardsFormSubmit = (evt) => {
   evt.preventDefault();
-  cardElement = createCardElement();
-  cardElement.querySelector('.photo-card__image').src = newCardLink.value;
-  cardElement.querySelector('.photo-card__image').alt = newCardName.value;
-  cardElement.querySelector('.photo-card__title').textContent = newCardName.value;
-  addCardsListeners();
+  createCard(newCardLink.value, newCardName.value, newCardName.value);
   cardsContainer.prepend(cardElement);
   togglePopupActivity(overlayCard);
 }
 
 //подгрузка 6 карточек при запуске
 initialCards.forEach((item) => {
-  cardElement = createCardElement();
-  cardElement.querySelector('.photo-card__image').src = item.link;
-  cardElement.querySelector('.photo-card__image').alt = item.name;
-  cardElement.querySelector('.photo-card__title').textContent = item.name;
-  addCardsListeners();
+  createCard(item.link, item.name, item.name);
   cardsContainer.append(cardElement);
 });
 
