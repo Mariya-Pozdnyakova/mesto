@@ -153,3 +153,6 @@ cardCloseButton.addEventListener('click', closePopup);
 photoCloseButton.addEventListener('click', closePopup);
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 сardsForm.addEventListener('submit', handleCardsFormSubmit);
+
+
+overlayProfile.addEventListener('click', item => {item.target.classList.toggle('overlay_opened')});
