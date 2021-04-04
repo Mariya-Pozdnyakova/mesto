@@ -1,28 +1,28 @@
 // Находим Overlay в DOM
-const overlayProfile = document.querySelector('.overlay-profile');
-const overlayCard = document.querySelector('.overlay-card');
-const overlayPhoto = document.querySelector('.overlay-photo');
+const popupProfile = document.querySelector('.popup-profile');
+const popupCard = document.querySelector('.popup-card');
+const popupPhoto = document.querySelector('.popup-photo');
 // Находим открытую карточку в DOM
-const popupPhoto = overlayPhoto.querySelector('.overlay__photo-card');
-const popupPhotoCaption = overlayPhoto.querySelector('.overlay__photo-caption');
+const popupPhotoCard = popupPhoto.querySelector('.popup__photo-card');
+const popupPhotoCaption = popupPhoto.querySelector('.popup__photo-caption');
 // Находим формы в DOM
-const profileForm = overlayProfile.querySelector('#profileForm');
-const сardsForm = overlayCard.querySelector('#cardsForm');
+const profileForm = popupProfile.querySelector('#profileForm');
+const сardsForm = popupCard.querySelector('#cardsForm');
 // Находим кнопки в DOM
-const profileCloseButton = overlayProfile.querySelector('.overlay__close-button');
-const cardCloseButton = overlayCard.querySelector('.overlay__close-button');
-const photoCloseButton = overlayPhoto.querySelector('.overlay__close-button');
+const profileCloseButton = popupProfile.querySelector('.popup__close-button');
+const cardCloseButton = popupCard.querySelector('.popup__close-button');
+const photoCloseButton = popupPhoto.querySelector('.popup__close-button');
 
 const popupEditButton = document.querySelector('.profile-info__edit-button');
 const popupAddButton = document.querySelector('.profile__add-button');
-const popupSaveButton = document.querySelector('.overlay__save-button');
+const popupSaveButton = document.querySelector('.popup__save-button');
 // Находим заголовок формы в DOM
-const popupHeading = document.querySelector('.overlay__heading');
+const popupHeading = document.querySelector('.popup__heading');
  // Находим поля формы в DOM
-const nameInput = profileForm.querySelector('.overlay__item_el_heading');
-const jobInput = profileForm.querySelector('.overlay__item_el_subheading');
-const newCardName = сardsForm.querySelector('.overlay__item_el_name');
-const newCardLink = сardsForm.querySelector('.overlay__item_el_link');
+const nameInput = profileForm.querySelector('.popup__item_el_heading');
+const jobInput = profileForm.querySelector('.popup__item_el_subheading');
+const newCardName = сardsForm.querySelector('.popup__item_el_name');
+const newCardLink = сardsForm.querySelector('.popup__item_el_link');
 // Выберите элементы, куда должны быть вставлены значения полей
 const nameText = document.querySelector('.profile-info__user-name');
 const jobText = document.querySelector('.profile-info__user-status');
@@ -61,12 +61,12 @@ const initialCards = [
 
 //вспомогательные функции
 
-const togglePopupActivity = (overlay) => {
-  overlay.classList.toggle('overlay_opened');
+const togglePopupActivity = (popup) => {
+  popup.classList.toggle('popup_opened');
 }
 
 const closePopup = (close) => {
-  close.target.parentElement.parentElement.classList.toggle('overlay_opened');
+  close.target.parentElement.parentElement.classList.toggle('popup_opened');
 }
 
 const toggleCardsLike = (evt) => {
@@ -89,20 +89,20 @@ const addCardsListeners = () => {
 
 // открытие фотокарточки
 const openPhotoPopup = (evt) => {
-  popupPhoto.src = evt.target.src;
+  popupPhotoCard.src = evt.target.src;
   popupPhotoCaption.textContent = evt.target.alt;
-  togglePopupActivity(overlayPhoto);
+  togglePopupActivity(popupPhoto);
 }
 
 //открытие форм
 const openProfilePopup = () => {
-  togglePopupActivity(overlayProfile);
+  togglePopupActivity(popupProfile);
   nameInput.value = nameText.textContent;
   jobInput.value = jobText.textContent;
 }
 
 const openCardsFormPopup = () => {
-  togglePopupActivity(overlayCard);
+  togglePopupActivity(popupCard);
   newCardName.value = '';
   newCardLink.value = '';
 }
@@ -119,7 +119,7 @@ const handleProfileFormSubmit = (evt) => {
   // Вставьте новые значения с помощью textContent
   jobText.textContent = jobInputValue;
   nameText.textContent = nameInputValue;
-  togglePopupActivity(overlayProfile);
+  togglePopupActivity(popupProfile);
 }
 
 // создание карточки
@@ -135,7 +135,7 @@ const handleCardsFormSubmit = (evt) => {
   evt.preventDefault();
   createCard(newCardLink.value, newCardName.value, newCardName.value);
   cardsContainer.prepend(cardElement);
-  togglePopupActivity(overlayCard);
+  togglePopupActivity(popupCard);
 }
 
 //подгрузка 6 карточек при запуске
@@ -155,4 +155,4 @@ profileForm.addEventListener('submit', handleProfileFormSubmit);
 сardsForm.addEventListener('submit', handleCardsFormSubmit);
 
 
-overlayProfile.addEventListener('click', item => {item.target.classList.toggle('overlay_opened')});
+// popupProfile.addEventListener('click', item => {item.target.classList.toggle('popup_opened')});

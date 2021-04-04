@@ -1,4 +1,4 @@
-.overlay__save-button {
+.popup__save-button {
   width: 100%;
   max-width: 358px;
   height: 46px;
@@ -13,13 +13,13 @@
   color: #FFFFFF;
 }
 
-.overlay__save-button:hover {
+.popup__save-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
 @media screen and (min-width: 1279px) {
-  .overlay__save-button {
+  .popup__save-button {
     height: 50px;
     font-size: 18px;
     line-height: 22px;

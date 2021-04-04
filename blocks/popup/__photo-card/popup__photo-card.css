@@ -1,4 +1,4 @@
-.overlay__photo-card {
+.popup__photo-card {
   display: block;
   object-fit: cover;
   max-width: 75vw;

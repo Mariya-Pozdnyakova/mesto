@@ -22,24 +22,24 @@
 @import url(../blocks/profile-info/__user-status/profile-info__user-status.css);
 
 /* импорт стилей формы профиля */
-@import url(../blocks/overlay/overlay.css);
-@import url(../blocks/overlay/_opened/overlay_opened.css);
-@import url(../blocks/overlay/__popup-area/overlay__popup-area.css);
-@import url(../blocks/overlay/__popup-area/_photo/overlay__popup-area_photo.css);
-@import url(../blocks/overlay/__close-button/overlay__close-button.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/__content-area/popup__content-area.css);
+@import url(../blocks/popup/__content-area/_photo/popup__content-area_photo.css);
+@import url(../blocks/popup/__close-button/popup__close-button.css);
 
 /* содержание формы */
-@import url(../blocks/overlay/__form/overlay__form.css);
-@import url(../blocks/overlay/__heading/overlay__heading.css);
-@import url(../blocks/overlay/__input-container/overlay__input-container.css);
-@import url(../blocks/overlay/__item/overlay__item.css);
-@import url(../blocks/overlay/__item/_el/overlay__item_el_heading.css);
-@import url(../blocks/overlay/__item/_el/overlay__item_el_subheading.css);
-@import url(../blocks/overlay/__save-button/overlay__save-button.css);
+@import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__heading/popup__heading.css);
+@import url(../blocks/popup/__input-container/popup__input-container.css);
+@import url(../blocks/popup/__item/popup__item.css);
+@import url(../blocks/popup/__item/_el/popup__item_el_heading.css);
+@import url(../blocks/popup/__item/_el/popup__item_el_subheading.css);
+@import url(../blocks/popup/__save-button/popup__save-button.css);
 
 /* всплывающая фотокарточка */
-@import url(../blocks/overlay/__photo-card/overlay__photo-card.css);
-@import url(../blocks/overlay/__photo-caption/overlay__photo-caption.css);
+@import url(../blocks/popup/__photo-card/popup__photo-card.css);
+@import url(../blocks/popup/__photo-caption/popup__photo-caption.css);
 
 /* импорт стилей фото карточек */
 @import url(../blocks/photo-cards/photo-cards.css);
