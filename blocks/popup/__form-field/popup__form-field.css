@@ -1,0 +1,6 @@
+.popup__form-field {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr minmax(30px,30px);
+  row-gap: 5px;
+}
