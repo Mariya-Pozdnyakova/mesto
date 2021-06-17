@@ -29,20 +29,30 @@
           <form class="popup__form" name="profileForm" id="profileForm">
             <h2 class="popup__heading">Редактировать профиль</h2>
             <fieldset class="popup__input-container">
-              <input
-                type="text"
-                id="heading"
-                name="heading"
-                placeholder="Имя пользователя"
-                required
-                class="popup__item popup__item_el_heading">
-              <input
-                type="text"
-                id="subheading"
-                name="subheading"
-                placeholder="Статус пользователя"
-                required
-                class="popup__item popup__item_el_subheading">
+              <label class="popup__form-field">
+                <input
+                  type="text"
+                  id="heading"
+                  name="heading"
+                  placeholder="Имя пользователя"
+                  minlength="2"
+                  maxlength="40"
+                  required
+                  class="popup__item popup__item_el_heading">
+                <span class="popup__item-error">Необходимо заполнить данное поле</span>
+              </label>
+              <label class="popup__form-field">
+                <input
+                  type="text"
+                  id="subheading"
+                  name="subheading"
+                  placeholder="Статус пользователя"
+                  minlength="2"
+                  maxlength="200"
+                  required
+                  class="popup__item popup__item_el_subheading">
+                <span class="popup__item-error">Необходимо заполнить данное поле</span>
+              </label>
             </fieldset>
             <button
               type="submit"
@@ -63,20 +73,28 @@
           <form class="popup__form" name="cardsForm" id="cardsForm">
             <h2 class="popup__heading">Новое место</h2>
             <fieldset class="popup__input-container">
-              <input
-                type="text"
-                id="cardName"
-                name="cardName"
-                placeholder="Название"
-                required
-                class="popup__item popup__item_el_name">
-              <input
-                type="url"
-                id="cardLink"
-                name="cardLink"
-                placeholder="Ссылка на картинку"
-                required
-                class="popup__item popup__item_el_link">
+              <label class="popup__form-field">
+                <input
+                  type="text"
+                  id="cardName"
+                  name="cardName"
+                  placeholder="Название"
+                  minlength="2"
+                  maxlength="30"
+                  required
+                  class="popup__item popup__item_el_name">
+                <span class="popup__item-error">Необходимо заполнить данное поле</span>
+              </label>
+              <label class="popup__form-field">
+                <input
+                  type="url"
+                  id="cardLink"
+                  name="cardLink"
+                  placeholder="Ссылка на картинку"
+                  required
+                  class="popup__item popup__item_el_link">
+                <span class="popup__item-error">Необходимо заполнить данное поле</span>
+              </label>
             </fieldset>
             <button
               type="submit"
