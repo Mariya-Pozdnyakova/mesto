@@ -20,7 +20,7 @@
 .popup__item::placeholder {
   color: rgba(196,196,196,1);
 }
-
+/*
 .popup__item:invalid {
-  border-bottom: 1px solid #FF0000; /* красная рамка для некорректных данных */
-}
+  border-bottom: 1px solid #FF0000;
+} */

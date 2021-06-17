@@ -26,7 +26,11 @@
       <section class="popup popup-profile">
         <div class="popup__content-area">
           <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
-          <form class="popup__form" name="profileForm" id="profileForm">
+          <form
+            class="popup__form"
+            name="profileForm"
+            id="profileForm"
+            novalidate>
             <h2 class="popup__heading">Редактировать профиль</h2>
             <fieldset class="popup__input-container">
               <label class="popup__form-field">
@@ -38,8 +42,8 @@
                   minlength="2"
                   maxlength="40"
                   required
-                  class="popup__item popup__item_el_heading">
-                <span class="popup__item-error">Необходимо заполнить данное поле</span>
+                  class="popup__item popup__input popup__item_el_heading">
+                <span class="heading-error"></span>
               </label>
               <label class="popup__form-field">
                 <input
@@ -50,13 +54,13 @@
                   minlength="2"
                   maxlength="200"
                   required
-                  class="popup__item popup__item_el_subheading">
-                <span class="popup__item-error">Необходимо заполнить данное поле</span>
+                  class="popup__item popup__input popup__item_el_subheading">
+                <span class="subheading-error"></span>
               </label>
             </fieldset>
             <button
               type="submit"
-              class="popup__save-button">Сохранить</button>
+              class="popup__button popup__save-button">Сохранить</button>
           </form>
         </div>
       </section>
@@ -70,7 +74,11 @@
       <section class="popup popup-card">
         <div class="popup__content-area">
           <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
-          <form class="popup__form" name="cardsForm" id="cardsForm">
+          <form
+            class="popup__form"
+            name="cardsForm"
+            id="cardsForm"
+            novalidate>
             <h2 class="popup__heading">Новое место</h2>
             <fieldset class="popup__input-container">
               <label class="popup__form-field">
@@ -82,8 +90,8 @@
                   minlength="2"
                   maxlength="30"
                   required
-                  class="popup__item popup__item_el_name">
-                <span class="popup__item-error">Необходимо заполнить данное поле</span>
+                  class="popup__item popup__input popup__item_el_name">
+                <span class="cardName-error"></span>
               </label>
               <label class="popup__form-field">
                 <input
@@ -92,13 +100,13 @@
                   name="cardLink"
                   placeholder="Ссылка на картинку"
                   required
-                  class="popup__item popup__item_el_link">
-                <span class="popup__item-error">Необходимо заполнить данное поле</span>
+                  class="popup__item popup__input popup__item_el_link">
+                <span class="cardLink-error"></span>
               </label>
             </fieldset>
             <button
               type="submit"
-              class="popup__save-button">Создать</button>
+              class="popup__button popup__save-button">Создать</button>
           </form>
         </div>
       </section>
@@ -118,5 +126,6 @@
     </article>
   </template>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
