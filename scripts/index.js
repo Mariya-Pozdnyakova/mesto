@@ -67,6 +67,20 @@ const togglePopupActivity = (popup) => {
 
 const closePopup = (close) => {
   close.target.parentElement.parentElement.classList.toggle('popup_opened');
+  removeKeyListners();
+}
+
+const closePopupOverlay = (evt) => {
+  togglePopupActivity(evt.target);
+  removeKeyListners();
+}
+
+function closePopupEcape(evt) {
+  // alert(evt.key);
+  if (evt.key==='Escape') {
+    togglePopupActivity(document.querySelector('.popup_opened'))
+    removeKeyListners();
+  };
 }
 
 const toggleCardsLike = (evt) => {
@@ -75,6 +89,15 @@ const toggleCardsLike = (evt) => {
 
 const removePhotoCards = (evt) => {
   evt.target.parentElement.remove();
+}
+
+// удалить слушатель по кнопке
+function removeKeyListners() {
+  document.removeEventListener('keydown',closePopupEcape);
+}
+// добавить слушатель по кнопке
+function addKeyListners() {
+  document.addEventListener('keydown',closePopupEcape);
 }
 
 // клонирование фотокарточки
@@ -92,6 +115,7 @@ const openPhotoPopup = (evt) => {
   popupPhotoCard.src = evt.target.src;
   popupPhotoCaption.textContent = evt.target.alt;
   togglePopupActivity(popupPhoto);
+  addKeyListners();
 }
 
 //открытие форм
@@ -99,12 +123,14 @@ const openProfilePopup = () => {
   togglePopupActivity(popupProfile);
   nameInput.value = nameText.textContent;
   jobInput.value = jobText.textContent;
+  addKeyListners();
 }
 
 const openCardsFormPopup = () => {
   togglePopupActivity(popupCard);
   newCardName.value = '';
   newCardLink.value = '';
+  addKeyListners();
 }
 
 // Обработчик «отправки» формы, хотя пока
@@ -120,6 +146,7 @@ const handleProfileFormSubmit = (evt) => {
   jobText.textContent = jobInputValue;
   nameText.textContent = nameInputValue;
   togglePopupActivity(popupProfile);
+  removeKeyListners();
 }
 
 // создание карточки
@@ -136,6 +163,7 @@ const handleCardsFormSubmit = (evt) => {
   createCard(newCardLink.value, newCardName.value, newCardName.value);
   cardsContainer.prepend(cardElement);
   togglePopupActivity(popupCard);
+  removeKeyListners();
 }
 
 //подгрузка 6 карточек при запуске
@@ -153,6 +181,8 @@ cardCloseButton.addEventListener('click', closePopup);
 photoCloseButton.addEventListener('click', closePopup);
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 сardsForm.addEventListener('submit', handleCardsFormSubmit);
-
+popupProfile.addEventListener('click',closePopupOverlay);
+popupCard.addEventListener('click',closePopupOverlay);
+popupPhoto.addEventListener('click',closePopupOverlay);
 
 // popupProfile.addEventListener('click', item => {item.target.classList.toggle('popup_opened')});
