@@ -104,7 +104,7 @@ function addKeyListners() {
 const createCardElement = () => cardTemplate.querySelector('.photo-card').cloneNode(true);
 
 // Добавление слушателей на фотокарточки
-const addCardsListeners = () => {
+const addCardsListeners = (cardElement) => {
   cardElement.querySelector('.photo-card__like').addEventListener('click', toggleCardsLike);
   cardElement.querySelector('.photo-card__trash').addEventListener('click', removePhotoCards);
   cardElement.querySelector('.photo-card__image').addEventListener('click', openPhotoPopup);
@@ -151,25 +151,24 @@ const handleProfileFormSubmit = (evt) => {
 
 // создание карточки
 const createCard = (src, alt, text) => {
-  cardElement = createCardElement();
+  const cardElement = createCardElement();
   cardElement.querySelector('.photo-card__image').src = src;
   cardElement.querySelector('.photo-card__image').alt = alt;
   cardElement.querySelector('.photo-card__title').textContent = text;
-  addCardsListeners();
+  addCardsListeners(cardElement);
+  return cardElement;
 }
 
 const handleCardsFormSubmit = (evt) => {
   evt.preventDefault();
-  createCard(newCardLink.value, newCardName.value, newCardName.value);
-  cardsContainer.prepend(cardElement);
+  cardsContainer.prepend(createCard(newCardLink.value, newCardName.value, newCardName.value));
   togglePopupActivity(popupCard);
   removeKeyListners();
 }
 
 //подгрузка 6 карточек при запуске
 initialCards.forEach((item) => {
-  createCard(item.link, item.name, item.name);
-  cardsContainer.append(cardElement);
+  cardsContainer.append(createCard(item.link, item.name, item.name));
 });
 
 // Прикрепляем обработчик к форме:
