@@ -15,7 +15,7 @@ const photoCloseButton = popupPhoto.querySelector('.popup__close-button');
 
 const popupEditButton = document.querySelector('.profile-info__edit-button');
 const popupAddButton = document.querySelector('.profile__add-button');
-const popupSaveButton = document.querySelector('.popup__save-button');
+const popupSaveButton = сardsForm.querySelector('.popup__save-button');
 // Находим заголовок формы в DOM
 const popupHeading = document.querySelector('.popup__heading');
  // Находим поля формы в DOM
@@ -82,7 +82,7 @@ const closePopupOverlay = (evt) => {
 function closePopupEcape(evt) {
   // alert(evt.key);
   if (evt.key==='Escape') {
-    closePopup(document.querySelector('.popup_opened'))
+    closePopup(document.querySelector('.popup_opened'));
     removeKeyListners();
   };
 }
@@ -125,16 +125,16 @@ const openPhotoPopup = (evt) => {
 //открытие форм
 const openProfilePopup = () => {
   openPopup(popupProfile);
+  addKeyListners();
   nameInput.value = nameText.textContent;
   jobInput.value = jobText.textContent;
-  addKeyListners();
 }
 
 const openCardsFormPopup = () => {
   openPopup(popupCard);
+  addKeyListners();
   newCardName.value = '';
   newCardLink.value = '';
-  addKeyListners();
 }
 
 // Обработчик «отправки» формы, хотя пока
@@ -168,6 +168,8 @@ const handleCardsFormSubmit = (evt) => {
   cardsContainer.prepend(createCard(newCardLink.value, newCardName.value, newCardName.value));
   closePopup(popupCard);
   removeKeyListners();
+  popupSaveButton.classList.add('popup__button_disabled');
+  popupSaveButton.setAttribute('disabled', true);
 }
 
 //подгрузка 6 карточек при запуске
