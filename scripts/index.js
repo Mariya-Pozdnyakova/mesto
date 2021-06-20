@@ -61,24 +61,28 @@ const initialCards = [
 
 //вспомогательные функции
 
-const togglePopupActivity = (popup) => {
-  popup.classList.toggle('popup_opened');
+const openPopup = (popup) => {
+  popup.classList.add('popup_opened');
 }
 
-const closePopup = (close) => {
-  close.target.parentElement.parentElement.classList.toggle('popup_opened');
+const closePopup = (popup) => {
+  popup.classList.remove('popup_opened');
+}
+
+const closePopupButton = (close) => {
+  closePopup(close.target.parentElement.parentElement);
   removeKeyListners();
 }
 
 const closePopupOverlay = (evt) => {
-  togglePopupActivity(evt.target);
+  closePopup(evt.target);
   removeKeyListners();
 }
 
 function closePopupEcape(evt) {
   // alert(evt.key);
   if (evt.key==='Escape') {
-    togglePopupActivity(document.querySelector('.popup_opened'))
+    closePopup(document.querySelector('.popup_opened'))
     removeKeyListners();
   };
 }
@@ -114,20 +118,20 @@ const addCardsListeners = (cardElement) => {
 const openPhotoPopup = (evt) => {
   popupPhotoCard.src = evt.target.src;
   popupPhotoCaption.textContent = evt.target.alt;
-  togglePopupActivity(popupPhoto);
+  openPopup(popupPhoto);
   addKeyListners();
 }
 
 //открытие форм
 const openProfilePopup = () => {
-  togglePopupActivity(popupProfile);
+  openPopup(popupProfile);
   nameInput.value = nameText.textContent;
   jobInput.value = jobText.textContent;
   addKeyListners();
 }
 
 const openCardsFormPopup = () => {
-  togglePopupActivity(popupCard);
+  openPopup(popupCard);
   newCardName.value = '';
   newCardLink.value = '';
   addKeyListners();
@@ -145,7 +149,7 @@ const handleProfileFormSubmit = (evt) => {
   // Вставьте новые значения с помощью textContent
   jobText.textContent = jobInputValue;
   nameText.textContent = nameInputValue;
-  togglePopupActivity(popupProfile);
+  closePopup(popupProfile);
   removeKeyListners();
 }
 
@@ -162,7 +166,7 @@ const createCard = (src, alt, text) => {
 const handleCardsFormSubmit = (evt) => {
   evt.preventDefault();
   cardsContainer.prepend(createCard(newCardLink.value, newCardName.value, newCardName.value));
-  togglePopupActivity(popupCard);
+  closePopup(popupCard);
   removeKeyListners();
 }
 
@@ -175,9 +179,9 @@ initialCards.forEach((item) => {
 // он будет следить за событием “submit” - «отправка»
 popupEditButton.addEventListener('click', openProfilePopup);
 popupAddButton.addEventListener('click', openCardsFormPopup);
-profileCloseButton.addEventListener('click', closePopup);
-cardCloseButton.addEventListener('click', closePopup);
-photoCloseButton.addEventListener('click', closePopup);
+profileCloseButton.addEventListener('click', closePopupButton);
+cardCloseButton.addEventListener('click', closePopupButton);
+photoCloseButton.addEventListener('click', closePopupButton);
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 сardsForm.addEventListener('submit', handleCardsFormSubmit);
 popupProfile.addEventListener('click',closePopupOverlay);
