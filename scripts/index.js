@@ -71,8 +71,8 @@ const closePopup = (popup) => {
   removeKeyListners();
 }
 
-const closePopupButton = (close) => {
-  closePopup(close.target.parentElement.parentElement);
+const closePopupByButton = (evt) => {
+  closePopup(evt.target.closest('.popup'));
 }
 
 const closePopupOverlay = (evt) => {
@@ -82,8 +82,8 @@ const closePopupOverlay = (evt) => {
 function closePopupEcape(evt) {
   // alert(evt.key);
   if (evt.key==='Escape') {
-    // console.log(popupProfile);
-    [popupProfile,popupCard,popupPhoto].forEach((item)=>{closePopup(item)});
+    // закрываю любой открытый popup
+    closePopup(document.querySelector('.popup_opened'));
   };
 }
 
@@ -102,8 +102,9 @@ function removeKeyListners() {
 }
 // добавить слушатель по кнопке
 function addKeyListners() {
-  // document.addEventListener('keydown',closePopupEcape);
-  window.addEventListener('keydown',closePopupEcape);
+  // изменен объект слушателя по кнопке Escape
+  document.addEventListener('keydown',closePopupEcape);
+  // window.addEventListener('keydown',closePopupEcape);
 }
 
 // клонирование фотокарточки
@@ -134,9 +135,13 @@ const openProfilePopup = () => {
 
 const openCardsFormPopup = () => {
   openPopup(popupCard);
+  // сбрасываю значения формы
+  сardsForm.reset();
   addKeyListners();
-  newCardName.value = '';
-  newCardLink.value = '';
+  // newCardName.value = '';
+  // newCardLink.value = '';
+  // использую функцию из валидации
+  disableSubmitButton(popupSaveButton, 'popup__button_disabled');
 }
 
 // Обработчик «отправки» формы, хотя пока
@@ -168,8 +173,6 @@ const handleCardsFormSubmit = (evt) => {
   evt.preventDefault();
   cardsContainer.prepend(createCard(newCardLink.value, newCardName.value, newCardName.value));
   closePopup(popupCard);
-  popupSaveButton.classList.add('popup__button_disabled');
-  popupSaveButton.setAttribute('disabled', true);
 }
 
 //подгрузка 6 карточек при запуске
@@ -181,9 +184,9 @@ initialCards.forEach((item) => {
 // он будет следить за событием “submit” - «отправка»
 popupEditButton.addEventListener('click', openProfilePopup);
 popupAddButton.addEventListener('click', openCardsFormPopup);
-profileCloseButton.addEventListener('click', closePopupButton);
-cardCloseButton.addEventListener('click', closePopupButton);
-photoCloseButton.addEventListener('click', closePopupButton);
+profileCloseButton.addEventListener('click', closePopupByButton);
+cardCloseButton.addEventListener('click', closePopupByButton);
+photoCloseButton.addEventListener('click', closePopupByButton);
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 сardsForm.addEventListener('submit', handleCardsFormSubmit);
 popupProfile.addEventListener('click',closePopupOverlay);

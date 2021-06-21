@@ -18,10 +18,15 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
+// объявляю универсальную функцию отключения кнопки
+const disableSubmitButton = (button, disableClass) => {
+  button.classList.add(disableClass);
+  button.setAttribute('disabled', true);
+}
+
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(config.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', true);
+    disableSubmitButton(buttonElement, config.inactiveButtonClass);
   } else {
     buttonElement.classList.remove(config.inactiveButtonClass);
     buttonElement.removeAttribute('disabled');
