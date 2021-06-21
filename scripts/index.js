@@ -67,23 +67,25 @@ const openPopup = (popup) => {
 
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
+  removeKeyListners();
 }
 
 const closePopupButton = (close) => {
   closePopup(close.target.parentElement.parentElement);
-  removeKeyListners();
 }
 
 const closePopupOverlay = (evt) => {
   closePopup(evt.target);
-  removeKeyListners();
 }
 
 function closePopupEcape(evt) {
   // alert(evt.key);
   if (evt.key==='Escape') {
-    closePopup(document.querySelector('.popup_opened'));
-    removeKeyListners();
+    // console.log(popupProfile);
+    closePopup(popupProfile);
+    closePopup(popupCard);
+    closePopup(popupPhoto);
+    // closePopup(document.querySelector('.popup_opened'));
   };
 }
 
@@ -98,11 +100,20 @@ const removePhotoCards = (evt) => {
 // удалить слушатель по кнопке
 function removeKeyListners() {
   document.removeEventListener('keydown',closePopupEcape);
+  // window.removeEventListener('keydown',closePopupEcape);
 }
 // добавить слушатель по кнопке
 function addKeyListners() {
   document.addEventListener('keydown',closePopupEcape);
+  window.addEventListener('keydown',closePopupEcape);
+  // const a =Array.from(document.getElementsByTagName("*"));
+  // a.forEach((item)=> item.addEventListener('keydown',closePopupEcape));
 }
+
+// document.addEventListener('click', function(evt){
+//   console.log(evt.target);
+//   evt.target.addEventListener('keydown',closePopupEcape);
+// });
 
 // клонирование фотокарточки
 const createCardElement = () => cardTemplate.querySelector('.photo-card').cloneNode(true);
@@ -150,7 +161,6 @@ const handleProfileFormSubmit = (evt) => {
   jobText.textContent = jobInputValue;
   nameText.textContent = nameInputValue;
   closePopup(popupProfile);
-  removeKeyListners();
 }
 
 // создание карточки
@@ -167,7 +177,6 @@ const handleCardsFormSubmit = (evt) => {
   evt.preventDefault();
   cardsContainer.prepend(createCard(newCardLink.value, newCardName.value, newCardName.value));
   closePopup(popupCard);
-  removeKeyListners();
   popupSaveButton.classList.add('popup__button_disabled');
   popupSaveButton.setAttribute('disabled', true);
 }
