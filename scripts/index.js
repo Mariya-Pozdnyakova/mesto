@@ -66,6 +66,7 @@ const openPopup = (popup) => {
 }
 
 const closePopup = (popup) => {
+  // console.log(document.querySelector('.popup_opened'));
   popup.classList.remove('popup_opened');
   removeKeyListners();
 }
@@ -82,10 +83,7 @@ function closePopupEcape(evt) {
   // alert(evt.key);
   if (evt.key==='Escape') {
     // console.log(popupProfile);
-    closePopup(popupProfile);
-    closePopup(popupCard);
-    closePopup(popupPhoto);
-    // closePopup(document.querySelector('.popup_opened'));
+    [popupProfile,popupCard,popupPhoto].forEach((item)=>{closePopup(item)});
   };
 }
 
@@ -104,16 +102,9 @@ function removeKeyListners() {
 }
 // добавить слушатель по кнопке
 function addKeyListners() {
-  document.addEventListener('keydown',closePopupEcape);
+  // document.addEventListener('keydown',closePopupEcape);
   window.addEventListener('keydown',closePopupEcape);
-  // const a =Array.from(document.getElementsByTagName("*"));
-  // a.forEach((item)=> item.addEventListener('keydown',closePopupEcape));
 }
-
-// document.addEventListener('click', function(evt){
-//   console.log(evt.target);
-//   evt.target.addEventListener('keydown',closePopupEcape);
-// });
 
 // клонирование фотокарточки
 const createCardElement = () => cardTemplate.querySelector('.photo-card').cloneNode(true);
